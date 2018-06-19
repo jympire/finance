@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+  
+  get 'about' , to: 'pages#about'
+
+  get 'careers' , to: 'pages#careers'
+
+  get 'client-stories', to: 'pages#client_stories'
+
+  get '/support/faq' , to: 'pages#faq'
+
+  get 'invoice-factoring' , to: 'pages#invoice_factoring'
+
+  get 'line-of-credit' , to: 'pages#line_of_credit'
+
+  get 'partner' , to: 'pages#partner'
+
+  get 'press' , to: 'pages#press'
+
+  get '/terms/privacy-policy' , to: 'pages#privacy'
+
+  get 'support' , to: 'pages#support'
+
+  get 'terms' , to: 'pages#terms'
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
 end
