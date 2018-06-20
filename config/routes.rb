@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'pages#home'
   
   get 'about' , to: 'pages#about'
@@ -28,4 +29,13 @@ Rails.application.routes.draw do
              path_names: {sign_in: 'login', sign_out: 'logout', edit: 'edit', sign_up: 'register'},
              controllers: {registrations: 'registrations'}
   
+  resources :companies, except: [:edit] do
+    member do
+      get 'funding'
+      get 'info'
+      get 'photo_upload'
+      get 'contact'
+      get 'edit'
+    end
+  end
 end

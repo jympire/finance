@@ -1,0 +1,64 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'company_menu' %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">Contact Info</div>
+        <div class="panel-body">
+          <div class="container">
+            <%= form_for @company do |f| %>
+             
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>Company Address</label>
+                    <%= f.text_field :company_address, placeholder: "Address", class: "form-control", required: true %>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>Apt or Suite</label>
+                    <%= f.text_field :company_suite, placeholder: "Apt or Suite", class: "form-control", required: true %>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>City</label>
+                    <%= f.text_field :company_city, placeholder: "City", class: "form-control", required: true %>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>State</label>
+                    <%= f.text_field :company_state, placeholder: "State", class: "form-control", required: true %>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>Zip Code</label>
+                    <%= f.text_field :company_zip, placeholder: "Zip", class: "form-control", required: true %>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                    <%= f.text_field :company_phone, placeholder: "Phone Number", class: "form-control", required: true %>
+                  </div>
+                </div>
+              </div>
+              
+              <%= f.submit "Save", class: "btn btn-primary" %>
+              
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
