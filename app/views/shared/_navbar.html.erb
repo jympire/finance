@@ -21,10 +21,8 @@
       </div><!--/.nav-collapse -->
     </div>
   </nav>
-<% end %>
+<% else %>
 
-
-<% if (user_signed_in?) %>
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="navbar-header">
@@ -44,13 +42,16 @@
             <%= current_user.first_name %> <%= current_user.last_name %> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#">Dashboard</a></li>
+              <li><%= link_to "Dashboard", dashboard_path %>
+              </li>
               <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-              <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
-            </ul>
+                <li><%= link_to 'Change password', edit_user_registration_path %></li>
+                <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+              </ul>
           </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
-  </nav>
+  </nav> 
+
 <% end %>

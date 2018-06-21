@@ -38,4 +38,6 @@ Rails.application.routes.draw do
       get 'edit'
     end
   end
+  
+  get 'dashboard' => 'dashboards#index'
 end
